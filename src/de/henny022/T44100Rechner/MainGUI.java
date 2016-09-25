@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class MainGUI extends JFrame
 {
-    private List<Nation> nations = new ArrayList<>(8);
+    private List<Nation> nations = new ArrayList<>();
 
 
     public MainGUI()
