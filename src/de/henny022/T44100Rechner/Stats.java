@@ -39,14 +39,42 @@ public class Stats {
         return killsPerNation.get(nation);
     }
 
+    public int getDaysPast() {
+        return daysPast;
+    }
+
+    public int getTotalDamage()
+    {
+        int damage = 0;
+        for (Map.Entry<ENation, Integer> entry : damagePerNation.entrySet())
+        {
+            damage += entry.getValue();
+        }
+        return damage;
+    }
+
+    public int getTotalKills()
+    {
+        int kills = 0;
+        for (Map.Entry<ENation, Integer> entry : killsPerNation.entrySet())
+        {
+            kills += entry.getValue();
+        }
+        return kills;
+    }
+
     public void addDamageToNation(ENation nation, int damage)
     {
-        damagePerNation.put(nation, damage);
+        int newDamage = getDamageForNation(nation) + damage;
+        if (newDamage > 150000) newDamage = 150000;
+        damagePerNation.put(nation, newDamage);
     }
 
     public void addKillsToNation(ENation nation, int kills)
     {
-        killsPerNation.put(nation, kills);
+        int newKills = getKillsForNation(nation) + kills;
+        if (newKills > 150) newKills = 150;
+        killsPerNation.put(nation, newKills);
     }
 
     public void incrementDaysPast()
@@ -89,6 +117,16 @@ public class Stats {
             damagePerNation.put(ENation.RUSSLAND, 0);
             damagePerNation.put(ENation.TSCHECHIEN, 0);
 
+            killsPerNation.put(ENation.AMERIKA, 0);
+            killsPerNation.put(ENation.BRITTEN, 0);
+            killsPerNation.put(ENation.CHINA, 0);
+            killsPerNation.put(ENation.DEUTSCHLAND, 0);
+            killsPerNation.put(ENation.FRANKREICH, 0);
+            killsPerNation.put(ENation.JAPAN, 0);
+            killsPerNation.put(ENation.RUSSLAND, 0);
+            killsPerNation.put(ENation.TSCHECHIEN, 0);
+
+            daysPast = 1;
             saveStats();
         }
 

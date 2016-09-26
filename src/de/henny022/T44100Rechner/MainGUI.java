@@ -11,7 +11,7 @@ import java.util.List;
 public class MainGUI extends JFrame
 {
     private List<Nation> nations = new ArrayList<>();
-
+    private Total total = new Total();
 
     public MainGUI()
     {
@@ -34,11 +34,16 @@ public class MainGUI extends JFrame
 
         container.setLayout(new GridLayout(1, 0));
 
+        container.add(total);
+
         for (Nation nation : nations)
         {
             container.add(nation);
         }
 
+        this.setLocationRelativeTo(null);
+        this.setSize(1000, 300);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
 

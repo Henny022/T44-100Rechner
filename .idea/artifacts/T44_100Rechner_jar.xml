@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="T44-100Rechner:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/T44_100Rechner_jar</output-path>
+    <root id="archive" name="T44-100Rechner.jar">
+      <element id="module-output" name="T44-100Rechner" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/SimpleFileStorage.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
