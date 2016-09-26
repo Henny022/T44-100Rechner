@@ -18,9 +18,7 @@ public class Total extends JPanel
     private JLabel labelDaysPast = new JLabel();
 
     private ActionListener listenerIncrementDaysPast = e -> {
-        Stats.getInstance().incrementDaysPast();
-        update();
-        Stats.getInstance().saveStats();
+        new IncreaseDaysPastUI();
     };
     private JButton buttonIncrementDaysPast = new JButton("<html>Nächster<br>Tag");
 
