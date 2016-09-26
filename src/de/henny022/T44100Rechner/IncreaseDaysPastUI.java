@@ -20,7 +20,7 @@ public class IncreaseDaysPastUI extends JFrame
     private ActionListener listenerNein = e -> {
         this.dispose();
     };
-    public IncreaseDaysPastUI()
+    public IncreaseDaysPastUI(Component relative)
     {
         this.setLayout(new FlowLayout());
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -29,7 +29,7 @@ public class IncreaseDaysPastUI extends JFrame
         this.add(buttonOK);
         buttonNein.addActionListener(listenerNein);
         this.add(buttonNein);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(relative);
         this.setSize(200, 100);
         this.setVisible(true);
     }
